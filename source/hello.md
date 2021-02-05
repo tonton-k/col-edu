@@ -43,6 +43,64 @@ remainingBalance(balance, 10, annualInterestRate, 0, balance)
 なので、二分探索方を用いる場合、$100 ~ $120の間で探索すればいい。
 
 
+```python
+balance = 999999
+annualInterestRate = 0.18
+
+def paymentBoudsGenerator(min, max):
+    ary: list[float] = []
+    
+    while min <= max:
+        ary.append(min)
+        min += 0.01
+        
+    return ary
 
 
+def isPaidOff(monthly_payment, balance, annualRate):
+    remain = balance - monthly_payment
+    paid = balance - remain
+    
+    for i in range(11):
+        paid += monthly_payment
+        interest = (annualRate / 12) * remain
+        remain = (remain + interest) - monthly_payment
+            
+        if i == 10:
+            if remain > 0.1:
+                return 'less'
+            
+            if remain < -0.1:
+                return 'much'
+            
+            if 0.1 > remain > -0.1:
+                return True
+        
+        i += 1
 
+
+def balanceBisectionSearch(balance: int, annualRate: float):
+    monthly_rate:    float = annualRate / 12
+    maximum_payment: float = (balance * (1 + monthly_rate)**12) / 12
+    minimum_payment: float = balance / 12
+    
+    bounds: list[int] = paymentBoudsGenerator(minimum_payment, maximum_payment)
+    
+    head: int = 0
+    tail: int = len(bounds) - 1
+    
+    while head <= tail:
+        center: int = (head + tail) // 2
+        
+        result = isPaidOff(bounds[center], balance, annualRate)
+        
+        if result == True:
+            return print('Lowest Payment: ' + str(round(bounds[center], 2)))
+        
+        if result == 'much': tail = center -1;
+        if result == 'less': head = center + 1;
+            
+
+        
+balanceBisectionSearch(balance, annualInterestRate)
+```
