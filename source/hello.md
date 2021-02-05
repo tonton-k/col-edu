@@ -4,11 +4,10 @@ date: 2020-02-05
 ---
 
 ## MIT 二分探索方
+2% for annual rate on the balance per year
+$3329 is the balance
 
-クレジットの年会費が2%
-借金が5000
-
-毎月いくら支払えば1年で返済が可能なのか？
+** the minimum fixed monthly payment needed in order pay off a credit card balance within 12 months **
 
 ## My answer without using the bisection search
 ```python
