@@ -4,7 +4,7 @@ date: 2020-02-05
 ---
 
 ## MIT 二分探索方
-2% for annual rate on the balance per year
+2% for annual rate on the balance per year  
 $3329 is the balance
 
 **the minimum fixed monthly payment needed in order pay off a credit card balance within 12 months**
