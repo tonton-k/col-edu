@@ -7,7 +7,7 @@ date: 2020-02-05
 2% for annual rate on the balance per year
 $3329 is the balance
 
-** the minimum fixed monthly payment needed in order pay off a credit card balance within 12 months **
+**the minimum fixed monthly payment needed in order pay off a credit card balance within 12 months**
 
 ## My answer without using the bisection search
 ```python
