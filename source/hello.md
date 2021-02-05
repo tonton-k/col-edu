@@ -34,7 +34,13 @@ def remainingBalance(remaining, lowestPayment, annualRate, month, defaultBalance
 remainingBalance(balance, 10, annualInterestRate, 0, balance)
 ```
 
-## Useful links
+## with Bisectin Search
+前回の問いのように$10から初めて、残高が0になるまでを繰り返すのは冗長である。  
+その為、二分探索方を利用するのだが、範囲をしてした方が時間を短くすることができる。
+例えば1200ドルの借金がある場合、1年で決済するのであれば、毎月120ドルは最低でも返済しなければいけない。  
+なので、二分探索方を用いる場合、$120を起点に探索を開始すればいい。
 
-- Website: https://gitpress.io
-- Getting Started: https://gitpress.io/c/help/welcome
+
+
+
+
