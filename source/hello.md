@@ -1,5 +1,5 @@
 ---
-title: Say Hello to the world
+title: Bisection Search
 date: 2020-02-05
 ---
 
