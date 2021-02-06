@@ -1,5 +1,6 @@
 ## just an example of how you convert decimal digits to binary digits
 
+```pytho
 num = 3
 result = ''
 
@@ -20,3 +21,4 @@ if isNeg:
     result = '-' + result
     
 print(result)
+```
