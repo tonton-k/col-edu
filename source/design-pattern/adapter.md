@@ -9,8 +9,8 @@
 1. クラス（継承）による、アダプターパターン
 2. インスタンス（委譲）による、アダプターパターン
 
+## 継承パターン
 ```python
-# 継承パターン
 from abc import ABCMeta, abstractmethod
 
 
