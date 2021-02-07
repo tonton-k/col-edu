@@ -98,4 +98,17 @@ while iterator.has_next():
 
 ```
     
- 
+
+## 登場人物紹介
+- iterator(iterator interface)
+反復子を定める役
+- Concrete iterator(BookShlef Iterator)
+イテレーターが定めたメソッドを実際に実装する
+- ConcreteAggregate(BookShelf)
+集合体を取り扱う
+
+
+
+
+
+
