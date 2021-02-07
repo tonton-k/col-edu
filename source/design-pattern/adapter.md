@@ -69,7 +69,7 @@ print(banner.print_string())
 from abc import ABCMeta, abstractmethod
 
 
-# 継承元となるクラス（標準ライブラリーだったり、その他だったり）
+# インスタンスの元となるクラス（標準ライブラリーだったり、その他だったり）
 
 class Banner:
   def __init__(self, text):
@@ -92,7 +92,7 @@ class PrintInterface(metaclass=ABCMeta):
     pass
 
 
-# 元々あるクラスを継承して拡張する
+# 元々あるクラスのインスタンスをゴニョるクラス
 # また、インターフェースを実装する
 class PrintBanner(PrintInterface):
   def __init__(self, text):
