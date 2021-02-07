@@ -31,19 +31,22 @@ class Banner:
 # interface
 class PrintInterface(metaclass=ABCMeta):
   @abstractmethod
-  def print_string():
+  def print_string(self):
     pass
 
-  def print_weak():
+  def print_weak(self):
     pass
 
 
 # 元々あるクラスを継承して拡張する
 # また、インターフェースを実装する
-class PrintBanner(Banner):
+class PrintBanner(Banner, PrintInterface):
   def __init__(self, text):
     super(PrintBanner, self).__init__(text)
     self.__text = text
+
+  def print_string(self):
+    return self.__text.upper()
 
   def print_weak(self):
     return '(' + self.__text + ')'
@@ -54,6 +57,8 @@ print(banner.show_text())
 
 banner = PrintBanner('heyhey')
 print(banner.print_weak())
+
+print(banner.print_string())
 ```
 
 ## 委譲パターン
