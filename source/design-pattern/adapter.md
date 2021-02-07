@@ -63,6 +63,7 @@ print(banner.print_string())
 
 ## 委譲パターン
 インスタンスを生成して行う  
+(これ合ってるのか？🤔）
 
 ```python
 from abc import ABCMeta, abstractmethod
@@ -84,18 +85,21 @@ class Banner:
 # interface
 class PrintInterface(metaclass=ABCMeta):
   @abstractmethod
-  def print_string():
+  def print_string(self):
     pass
 
-  def print_weak():
+  def print_weak(self):
     pass
 
 
 # 元々あるクラスを継承して拡張する
 # また、インターフェースを実装する
-class PrintBanner:
+class PrintBanner(PrintInterface):
   def __init__(self, text):
     self.banner = Banner(text)
+
+  def print_string(self):
+    return self.banner.show_text().upper()
 
   def print_weak(self):
     return '(' + self.banner.show_text() + ')'
@@ -106,4 +110,6 @@ print(banner.show_text())
 
 banner = PrintBanner('heyhey')
 print(banner.print_weak())
+
+print(banner.print_string())
 ```
