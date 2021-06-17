@@ -63,7 +63,6 @@ print(banner.print_string())
 
 ## 委譲パターン
 インスタンスを生成して行う  
-(これ合ってるのか？🤔）
 
 ```python
 from abc import ABCMeta, abstractmethod
